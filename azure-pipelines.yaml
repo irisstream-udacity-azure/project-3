@@ -6,14 +6,12 @@ name: Azure Pipelines
 trigger:
 - main
 
-# ToDo: Replace the agent pool name, if you are using Udacity Cloud lab. 
 # Otherwise comment out the line below. 
 pool: Azure Pipelines
 
 variables:
   python.version: '3.7.6'
-  # ToDo: Replace the service connection name as used in the DevOps project settings
-  azureServiceConnectionId: 'myServiceConnection'
+  azureServiceConnectionId: 'udacity-project-3'
   # Project root folder. Point to the folder containing manage.py file.
   projectRoot: $(System.DefaultWorkingDirectory)
   # Environment name
@@ -31,7 +29,6 @@ stages:
         terraformVersion: '1.2.9'
     
     # Run Terraform Init on the pipeline agent 
-    # ToDo: Replace the resource group name, storage account name, and container name below
     - task: TerraformTaskV3@3
       displayName: 'Terrafom init'
       inputs:
@@ -39,8 +36,8 @@ stages:
         command: 'init'
         workingDirectory: '$(System.DefaultWorkingDirectory)/terraform/environments/test'
         backendServiceArm: '$(azureServiceConnectionId)'
-        backendAzureRmResourceGroupName: 'Azuredevops'
-        backendAzureRmStorageAccountName: 'tfstate281845088'
+        backendAzureRmResourceGroupName: 'AzureDevOps'
+        backendAzureRmStorageAccountName: 'tfstate78651576'
         backendAzureRmContainerName: 'tfstate'
         backendAzureRmKey: 'test.terraform.tfstate'
 
@@ -53,7 +50,6 @@ stages:
 
     
     # Run Terraform Apply
-    # ToDo: Change the workingDirectory path, as applicable to you
     - task: TerraformTaskV3@3
       displayName: Terraform apply
       inputs:
@@ -63,7 +59,6 @@ stages:
         environmentServiceNameAzureRM: '$(azureServiceConnectionId)'
 
     # Destroy the resources in Azure
-    # ToDo: Change the workingDirectory path, as applicable to you
     - task: TerraformTaskV3@3
       displayName: Terraform destroy
       inputs:
