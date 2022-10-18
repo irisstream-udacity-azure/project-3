@@ -9,12 +9,16 @@ pool:
 
 variables:
   azureServiceConnectionId: udacity-project-3
-steps:
-- task: TerraformTaskV3@3
-  displayName: Terraform destroy
-  inputs:
-    provider: 'azurerm'
-    command: 'destroy'
-    workingDirectory: '$(System.DefaultWorkingDirectory)/terraform/environments/test'
-    environmentServiceNameAzureRM: '$(azureServiceConnectionId)'
+
+- stage: Build
+  jobs:
+  - job: BuildInfrastructure
+    steps:
+    - task: TerraformTaskV3@3
+      displayName: Terraform destroy
+      inputs:
+        provider: 'azurerm'
+        command: 'destroy'
+        workingDirectory: '$(System.DefaultWorkingDirectory)/terraform/environments/test'
+        environmentServiceNameAzureRM: '$(azureServiceConnectionId)'
 
