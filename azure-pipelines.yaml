@@ -14,7 +14,7 @@ variables:
   # Project root folder. Point to the folder containing manage.py file.
   projectRoot: $(System.DefaultWorkingDirectory)
   # Environment name
-  environmentName: deployment
+  environmentName: development
   subcriptionId: 'd9d1c94b-6d97-4ef6-9b6d-2ba25a2f9438'
   appName: udacity-project-3-AppService
 
