@@ -185,8 +185,8 @@ stages:
           - task: AzureWebApp@1
             displayName: 'Deploy Azure Web App'
             inputs:
-              azureSubscription: Iris Stream
-              appName: 
+              azureSubscription: $(azureServiceConnectionId)
+              appName: $(appName)
               appType: webApp
               package: $(Pipeline.Workspace)/drop-fakerestapi/$(Build.BuildId)-fakerestapi.zip 
           # #--------------------------------------------#    
