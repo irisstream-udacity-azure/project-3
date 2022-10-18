@@ -10,6 +10,7 @@ pool:
 variables:
   azureServiceConnectionId: udacity-project-3
 
+stages:
 - stage: Build
   jobs:
   - job: BuildInfrastructure
