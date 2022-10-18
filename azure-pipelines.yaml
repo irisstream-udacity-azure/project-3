@@ -152,20 +152,20 @@ stages:
       displayName: 'Upload Package'
       artifact: drop-fakerestapi
 
-    #--------------------------------------------#   
-    # JMeter (Performance) Test Suite - Archive
-    # ToDo: Complete the ArchiveFiles@2 task and publish step 
-    - task: ArchiveFiles@2
-      displayName: 'Archive PerformanceTestSuite'
-      inputs:
-        rootFolderOrFile: '$(System.DefaultWorkingDirectory)/automatedtesting/jmeter/test-suit'
-        includeRootFolder: false
-        archiveType: 'zip'
-        archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId)-performancetests.zip'
-    # JMeter Test Suite - Publish    
-    - publish: $(Build.ArtifactStagingDirectory)/$(Build.BuildId)-performancetests.zip   # Same as the archiveFile artifact above.
-      displayName: 'Upload Package'
-      artifact: drop-performancetests
+    # #--------------------------------------------#   
+    # # JMeter (Performance) Test Suite - Archive
+    # # ToDo: Complete the ArchiveFiles@2 task and publish step 
+    # - task: ArchiveFiles@2
+    #   displayName: 'Archive PerformanceTestSuite'
+    #   inputs:
+    #     rootFolderOrFile: '$(System.DefaultWorkingDirectory)/automatedtesting/jmeter/test-suit'
+    #     includeRootFolder: false
+    #     archiveType: 'zip'
+    #     archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId)-performancetests.zip'
+    # # JMeter Test Suite - Publish    
+    # - publish: $(Build.ArtifactStagingDirectory)/$(Build.BuildId)-performancetests.zip   # Same as the archiveFile artifact above.
+    #   displayName: 'Upload Package'
+    #   artifact: drop-performancetests
 
 #--------------------------------------------#  
 # DEPLOYMENT STAGE
