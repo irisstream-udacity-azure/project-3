@@ -116,7 +116,7 @@ stages:
     - task: PublishTestResults@2
       inputs:
         testResultsFormat: 'JUnit'
-        testResultsFiles: '**/TEST-*.xml'
+        testResultsFiles: '**/newman-run-report-*.xml'
         searchFolder: '$(System.DefaultWorkingDirectory)/automatedtesting/postman'
         mergeTestResults: true
         testRunTitle: Postman Test Results
