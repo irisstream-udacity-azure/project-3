@@ -62,5 +62,5 @@ module "vm" {
   subnet_id           = module.network.subnet_id_test
   public_ip_id        = module.publicip.public_ip_address_id
   name                = "udacity-project-3"
-  image_id            = var.image_id
+  image_name            = var.image_name
 }

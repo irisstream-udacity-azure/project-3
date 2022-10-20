@@ -22,6 +22,6 @@ variable "public_ip_id" {
   type = string
 }
 
-variable "image_id" {
+variable "image_name" {
   type = string
 }

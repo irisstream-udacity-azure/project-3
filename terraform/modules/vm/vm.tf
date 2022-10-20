@@ -11,6 +11,11 @@ resource "azurerm_network_interface" "nic" {
   }
 }
 
+data "azurerm_image" "image" {
+  name                = var.image_name
+  resource_group_name = "udacity"
+}
+
 resource "azurerm_linux_virtual_machine" "vm" {
   name                  = "${var.name}-${var.resource_type}"
   location              = var.location
@@ -26,5 +31,5 @@ resource "azurerm_linux_virtual_machine" "vm" {
     caching              = "ReadWrite"
     storage_account_type = "Standard_LRS"
   }
-  source_image_id = var.image_id
+  source_image_id = data.azurerm_image.image.id
 }
