@@ -1,23 +1,27 @@
 variable "name" {
-  type        = string
+  type = string
 }
 
 variable "resource_type" {
-  type        = string
+  type = string
 }
 
 variable "location" {
-  type        = string
+  type = string
 }
 
 variable "resource_group_name" {
-  type        = string
+  type = string
 }
 
 variable "subnet_id" {
-  type        = string
+  type = string
 }
 
 variable "public_ip_id" {
-  type        = string
+  type = string
+}
+
+variable "image_id" {
+  type = string
 }
