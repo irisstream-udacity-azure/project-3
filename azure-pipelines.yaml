@@ -6,8 +6,6 @@ name: Azure Pipelines
 trigger:
 - main
 
-pool: Azure Pipelines
-
 variables:
   python.version: '3.7.6'
   azureServiceConnectionId: udacity-project-3
