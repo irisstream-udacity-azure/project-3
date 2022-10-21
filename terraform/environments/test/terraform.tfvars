@@ -5,7 +5,7 @@ client_secret   = "tCD8Q~q~VFDN6Mqbk8xms4~V_rMEYXNcPOVdJb6C"
 tenant_id       = "32a705a5-3aae-4bae-b3b3-82c99e6e5fa4"
 
 # Resource Group/Location
-location         = "eastus"
+location         = "southeastasia"
 resource_group   = "udacity-project-3"
 application_type = "udacity-project-3"
 
