@@ -17,9 +17,6 @@
 							"    pm.expect(pm.response.text()).to.include(\"success\");",
 							"});",
 							"",
-							"var json = pm.response.json();",
-							"pm.environment.set(\"id\", json.data.id);",
-							"",
 							"pm.test(\"Reponse is correct\", function () {",
 							"    pm.expect(json.data.name).to.eql(pm.environment.get(\"name\"));",
 							"});"

@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "64204d0e-73f5-4bfb-b2c4-bdcb1b934cb7",
-		"name": "Regression Test Suite",
+		"_postman_id": "777bec41-bd89-42ad-be31-85e0bc302f64",
+		"name": "[Project 3] Data Validation Suit Test",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "0"
+		"_exporter_id": "23918199"
 	},
 	"item": [
 		{
@@ -34,12 +34,14 @@
 					}
 				},
 				"url": {
-					"raw": "{{url}}/{{api_path_create}}",
+					"raw": "{{url}}/api/v1/create",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
-						"{{api_path_create}}"
+						"api",
+						"v1",
+						"create"
 					]
 				}
 			},
@@ -54,8 +56,7 @@
 						"exec": [
 							"pm.test(\"Successful response\", function () {",
 							"    pm.expect(pm.response.text()).to.include(\"success\");",
-							"});",
-							""
+							"});"
 						],
 						"type": "text/javascript"
 					}
@@ -65,12 +66,15 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/{{api_path}}",
+					"raw": "{{url}}/public/api/v1/employees",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
-						"{{api_path}}"
+						"public",
+						"api",
+						"v1",
+						"employees"
 					]
 				}
 			},
