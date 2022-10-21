@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "0f5da45c-ef96-407a-8090-b29d009a60cb",
-		"name": "Data Validation suite",
+		"_postman_id": "777bec41-bd89-42ad-be31-85e0bc302f64",
+		"name": "[Project 3] Data Validation Suit Test",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "0"
+		"_exporter_id": "23918199"
 	},
 	"item": [
 		{
@@ -17,12 +17,12 @@
 							"    pm.expect(pm.response.text()).to.include(\"success\");",
 							"});",
 							"",
-							"pm.test(\"Response has proper value\", function () {",
-							"    var jsonData = pm.response.json();",
-							"    pm.expect(jsonData.data.name).to.eql(pm.environment.get(\"name\"));",
-							"});",
+							"var json = pm.response.json();",
+							"pm.environment.set(\"id\", json.data.id);",
 							"",
-							""
+							"pm.test(\"Reponse is correct\", function () {",
+							"    pm.expect(json.data.name).to.eql(pm.environment.get(\"name\"));",
+							"});"
 						],
 						"type": "text/javascript"
 					}
@@ -33,7 +33,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\": \"Mirko\",\n    \"salary\": \"2015\",\n    \"age\": \"25\"\n}",
+					"raw": "{\n    \"name\": \"{{name}}\",\n    \"salary\": \"{{salary}}\",\n    \"age\": \"{{age}}\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -41,12 +41,9 @@
 					}
 				},
 				"url": {
-					"raw": "http://dummy.restapiexample.com/api/v1/create",
-					"protocol": "http",
+					"raw": "{{url}}/api/v1/create",
 					"host": [
-						"dummy",
-						"restapiexample",
-						"com"
+						"{{url}}"
 					],
 					"path": [
 						"api",
@@ -67,8 +64,9 @@
 							"pm.test(\"Successful response\", function () {",
 							"    pm.expect(pm.response.text()).to.include(\"success\");",
 							"});",
-							"pm.test(\"AT least one employee has been acquired\", function () {",
-							"    pm.expect(pm.response.text()).to.include(\"employee_name\");",
+							"",
+							"pm.test(\"At lease 1 employee\", function () {",
+							"   pm.expect(pm.response.text()).to.include(\"employee_name\"); ",
 							"});"
 						],
 						"type": "text/javascript"
@@ -79,19 +77,15 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/{{api_path}}",
+					"raw": "{{url}}/public/api/v1/employees",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
-						"{{api_path}}"
-					],
-					"query": [
-						{
-							"key": "page",
-							"value": "2",
-							"disabled": true
-						}
+						"public",
+						"api",
+						"v1",
+						"employees"
 					]
 				}
 			},
