@@ -19,7 +19,7 @@ resource "azurerm_linux_web_app" "test" {
     always_on = false
     application_stack {
       python_version = "3.7"
-      dotnet_version = "5.0"
+      # dotnet_version = "5.0"
     }
   }
 }
