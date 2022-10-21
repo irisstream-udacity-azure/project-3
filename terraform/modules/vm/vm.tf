@@ -13,7 +13,7 @@ resource "azurerm_network_interface" "nic" {
 
 data "azurerm_image" "image" {
   name                = var.image_name
-  resource_group_name = var.resource_group_name
+  resource_group_name = "udacity"
 }
 
 resource "azurerm_linux_virtual_machine" "vm" {
