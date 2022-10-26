@@ -236,7 +236,6 @@ stages:
                 export PATH=$PATH:/snap/chromium/current/usr/lib/chromium-browser/chromedriver"
                 
                 # ToDo: Write commands for deploying the UI Test Suite (published zip artifact) to the linux VM and execute the Test Suite
-                tar -xzf $(Pipeline.Workspace)/drop-uitests/$(Build.BuildId)-uitests.zip
-                cd automatedtesting/selenium
+                unzip  $(Pipeline.Workspace)/drop-uitests/$(Build.BuildId)-uitests.zip
                 python3 UITestSuite.py --user standard_user --password secret_sauce
-           
+              workingDirectory: $(Pipeline.Workspace)/drop-uitests
