@@ -233,7 +233,7 @@ stages:
                 pip3 install selenium
                 
                 #  ToDo: Add chromedriver executable to path
-                export PATH=$PATH:/snap/chromium/current/usr/lib/chromium-browser/chromedriver"
+                export PATH="$PATH:/snap/chromium/current/usr/lib/chromium-browser/chromedriver"
                 
                 # ToDo: Write commands for deploying the UI Test Suite (published zip artifact) to the linux VM and execute the Test Suite
                 unzip  $(Pipeline.Workspace)/drop-uitests/$(Build.BuildId)-uitests.zip
