@@ -14,5 +14,5 @@ variable "virtual_network_name" {}
 variable "address_prefix_test" {}
 variable "address_space" {}
 
-variable "image_name" {}
+variable "image_names" {}
 

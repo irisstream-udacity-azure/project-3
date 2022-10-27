@@ -55,12 +55,13 @@ module "publicip" {
 }
 
 module "vm" {
+  count = length(var.image_names)
   source              = "../../modules/vm"
   location            = var.location
   resource_type       = "vm"
   resource_group_name = module.resource_group.resource_group_name
   subnet_id           = module.network.subnet_id_test
   public_ip_id        = module.publicip.public_ip_address_id
-  name                = "udacity-project-3"
-  image_name            = var.image_name
+  name                = var.image_names[count.index]
+  image_name          = var.image_names[count.index]
 }
