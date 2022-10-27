@@ -3,7 +3,7 @@ module "publicip" {
   location         = var.location
   application_type = "udacity-project-3"
   resource_type    = "publicip"
-  resource_group   = module.resource_group.resource_group_name
+  resource_group   = var.resource_group_name
 }
 
 resource "azurerm_network_interface" "nic" {
