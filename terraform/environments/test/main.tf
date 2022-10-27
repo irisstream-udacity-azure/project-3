@@ -46,13 +46,6 @@ module "appservice" {
   resource_type    = "AppService"
   resource_group   = module.resource_group.resource_group_name
 }
-module "publicip" {
-  source           = "../../modules/publicip"
-  location         = var.location
-  application_type = var.application_type
-  resource_type    = "publicip"
-  resource_group   = module.resource_group.resource_group_name
-}
 
 module "vm" {
   count = length(var.image_names)
@@ -61,7 +54,6 @@ module "vm" {
   resource_type       = "vm"
   resource_group_name = module.resource_group.resource_group_name
   subnet_id           = module.network.subnet_id_test
-  public_ip_id        = module.publicip.public_ip_address_id
   name                = var.image_names[count.index]
   image_name          = var.image_names[count.index]
 }

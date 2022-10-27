@@ -1,3 +1,11 @@
+module "publicip" {
+  source           = "../modules/publicip"
+  location         = var.location
+  application_type = "udacity-project-3"
+  resource_type    = "publicip"
+  resource_group   = module.resource_group.resource_group_name
+}
+
 resource "azurerm_network_interface" "nic" {
   name                = "${var.name}-${var.resource_type}-nic"
   location            = var.location
@@ -7,7 +15,7 @@ resource "azurerm_network_interface" "nic" {
     name                          = "internal"
     subnet_id                     = var.subnet_id
     private_ip_address_allocation = "Dynamic"
-    public_ip_address_id          = var.public_ip_id
+    public_ip_address_id          = module.publicip.public_ip_address_id
   }
 }
 
