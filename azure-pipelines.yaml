@@ -208,6 +208,8 @@ stages:
   # ToDo: 
   - deployment: VMDeploy
     displayName: Selenium Tests
+    pool:
+      vmImage: 'Ubuntu-18.04'      
     environment:
       name: $(environmentName)
       resourceType: VirtualMachine
@@ -230,7 +232,7 @@ stages:
                 sudo apt-get install python3-pip -y
                 sudo apt-get install unzip -y
                 sudo apt-get install -y chromium-browser
-                pip3 install selenium
+                pip3 install selenium==4.5.0
                 
                 #  ToDo: Add chromedriver executable to path
                 export PATH="$PATH:/snap/chromium/current/usr/lib/chromium-browser"
