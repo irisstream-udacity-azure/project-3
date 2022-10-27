@@ -235,7 +235,7 @@ stages:
                 sudo apt-get install python3-pip -y
                 sudo apt-get install unzip -y
                 sudo apt-get install -y chromium-browser
-                pip3 install selenium==4.5.0
+                pip3 install selenium==4.0
                 
                 #  ToDo: Add chromedriver executable to path
                 export PATH="$PATH:/snap/chromium/current/usr/lib/chromium-browser"
