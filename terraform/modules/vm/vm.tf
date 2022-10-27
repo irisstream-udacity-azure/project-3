@@ -1,5 +1,5 @@
 module "publicip" {
-  source           = "../modules/publicip"
+  source           = "../../modules/publicip"
   location         = var.location
   application_type = "udacity-project-3"
   resource_type    = "publicip"
