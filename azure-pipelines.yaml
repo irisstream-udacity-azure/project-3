@@ -174,7 +174,7 @@ stages:
   # Deploy FakeRestAPI Web App
   - deployment: FakeRestAPI
     pool:
-      vmImage: 'Ubuntu-18.04'      
+      vmImage: 'Ubuntu-20.04'
     environment: $(environmentName)
     strategy:
       runOnce:
@@ -209,7 +209,7 @@ stages:
   - deployment: VMDeploy
     displayName: Selenium Tests
     pool:
-      vmImage: 'Ubuntu-18.04'      
+      vmImage: 'Ubuntu-20.04'
     environment: $(environmentName)
     # pool:
     #   vmImage: 'Ubuntu-18.04'      
