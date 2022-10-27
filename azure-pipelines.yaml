@@ -210,10 +210,13 @@ stages:
     displayName: Selenium Tests
     pool:
       vmImage: 'Ubuntu-18.04'      
-    environment:
-      name: $(environmentName)
-      resourceType: VirtualMachine
-      tags: selenium
+    environment: $(environmentName)
+    # pool:
+    #   vmImage: 'Ubuntu-18.04'      
+    # environment:
+    #   name: $(environmentName)
+    #   resourceType: VirtualMachine
+    #   tags: selenium
     strategy:
       runOnce:
         deploy:
