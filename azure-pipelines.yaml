@@ -235,7 +235,7 @@ stages:
                 sudo apt-get install python3-pip -y
                 sudo apt-get install unzip -y
                 python -m pip install --upgrade pip
-                pip3 install selenium=4.5.0
+                pip3 install selenium==4.5.0
                 pip3 install chromedriver-py==106.0.5249.61
                 
                 #  ToDo: Add chromedriver executable to path
