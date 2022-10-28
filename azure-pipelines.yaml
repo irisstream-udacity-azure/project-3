@@ -243,5 +243,5 @@ stages:
                 
                 # ToDo: Write commands for deploying the UI Test Suite (published zip artifact) to the linux VM and execute the Test Suite
                 unzip  $(Pipeline.Workspace)/drop-uitests/$(Build.BuildId)-uitests.zip
-                python3 UITestSuite.py --user standard_user --password secret_sauce
+                python3 UITestSuite.py --user standard_user --password secret_sauce > /var/log/uitests.log
               workingDirectory: $(Pipeline.Workspace)/drop-uitests

@@ -15,11 +15,6 @@
 						"exec": [
 							"pm.test(\"Successful response\", function () {",
 							"    pm.response.to.have.status(201);",
-							"});",
-							"",
-							"var json = pm.response.json();",
-							"pm.test(\"Reponse is correct\", function () {",
-							"    pm.expect(json.userid).to.eql(pm.environment.get(\"userid\"));",
 							"});"
 						],
 						"type": "text/javascript"
@@ -59,10 +54,6 @@
 						"exec": [
 							"pm.test(\"Successful response\", function () {",
 							"    pm.expect(pm.response.text()).to.include(\"success\");",
-							"});",
-							"",
-							"pm.test(\"At lease 1 post\", function () {",
-							"   pm.expect(pm.response.text()).to.include(\"id\"); ",
 							"});"
 						],
 						"type": "text/javascript"
