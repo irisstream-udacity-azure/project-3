@@ -208,15 +208,15 @@ stages:
   # ToDo: 
   - deployment: VMDeploy
     displayName: Selenium Tests
-    # pool:
-    #   vmImage: 'Ubuntu-20.04'
-    # environment: $(environmentName)
-    # pool:
-    #   vmImage: 'Ubuntu-20.04'      
-    environment:
-      name: $(environmentName)
-      resourceType: VirtualMachine
-      tags: selenium
+    pool:
+      vmImage: 'Ubuntu-20.04'
+    environment: $(environmentName)
+    # # pool:
+    # #   vmImage: 'Ubuntu-20.04'      
+    # environment:
+    #   name: $(environmentName)
+    #   resourceType: VirtualMachine
+    #   tags: selenium
     strategy:
       runOnce:
         deploy:
