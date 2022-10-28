@@ -3,31 +3,31 @@
 	"name": "Udacity Azure Devops",
 	"values": [
 		{
-			"key": "name",
+			"key": "userid",
 			"value": "Iris",
 			"type": "default",
 			"enabled": true
 		},
 		{
-			"key": "salary",
-			"value": "700",
+			"key": "title",
+			"value": "My title",
 			"type": "default",
 			"enabled": true
 		},
 		{
-			"key": "age",
-			"value": "22",
+			"key": "body",
+			"value": "This is my body",
 			"type": "default",
 			"enabled": true
 		},
 		{
 			"key": "url",
-			"value": "http://dummy.restapiexample.com",
+			"value": "https://jsonplaceholder.typicode.com",
 			"type": "default",
 			"enabled": true
 		}
 	],
 	"_postman_variable_scope": "environment",
-	"_postman_exported_at": "2022-10-21T04:21:39.188Z",
-	"_postman_exported_using": "Postman/10.0.32-221018-0438"
+	"_postman_exported_at": "2022-10-28T04:46:46.858Z",
+	"_postman_exported_using": "Postman/10.0.40-221027-1159"
 }

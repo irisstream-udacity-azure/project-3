@@ -7,18 +7,19 @@
 	},
 	"item": [
 		{
-			"name": "Create Employee",
+			"name": "Create Post",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
 						"exec": [
 							"pm.test(\"Successful response\", function () {",
-							"    pm.expect(pm.response.text()).to.include(\"success\");",
+							"    pm.response.to.have.status(201);",
 							"});",
 							"",
+							"var json = pm.response.json();",
 							"pm.test(\"Reponse is correct\", function () {",
-							"    pm.expect(json.data.name).to.eql(pm.environment.get(\"name\"));",
+							"    pm.expect(json.userid).to.eql(pm.environment.get(\"userid\"));",
 							"});"
 						],
 						"type": "text/javascript"
@@ -30,7 +31,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\": \"{{name}}\",\n    \"salary\": \"{{salary}}\",\n    \"age\": \"{{age}}\"\n}",
+					"raw": "{\n    \"userid\": \"{{userid}}\",\n    \"title\": \"{{title}}\",\n    \"body\": \"{{body}}\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -38,21 +39,19 @@
 					}
 				},
 				"url": {
-					"raw": "{{url}}/api/v1/create",
+					"raw": "{{url}}/posts",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
-						"api",
-						"v1",
-						"create"
+						"posts"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "Get All Employees",
+			"name": "Get All Comments",
 			"event": [
 				{
 					"listen": "test",
@@ -62,8 +61,8 @@
 							"    pm.expect(pm.response.text()).to.include(\"success\");",
 							"});",
 							"",
-							"pm.test(\"At lease 1 employee\", function () {",
-							"   pm.expect(pm.response.text()).to.include(\"employee_name\"); ",
+							"pm.test(\"At lease 1 post\", function () {",
+							"   pm.expect(pm.response.text()).to.include(\"id\"); ",
 							"});"
 						],
 						"type": "text/javascript"
