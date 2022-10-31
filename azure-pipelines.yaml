@@ -225,6 +225,7 @@ stages:
           - download: current
             artifact: drop-uitests
           - bash: |
+              export PATH="$PATH:/home/azureuser/.miniconda3/bin"
               unzip -o $(Pipeline.Workspace)/drop-uitests/$(Build.BuildId)-uitests.zip
               source activate selenium
               python uitests.py | tee -a /tmp/uitests.log
