@@ -200,9 +200,9 @@ stages:
                 # unzip the jmeter test suite published zip artifact
                 unzip $(Pipeline.Workspace)/drop-performancetests/$(Build.BuildId)-performancetests.zip
                 # run the Endurance test suite
-                ./apache-jmeter-5.4.1/bin/jmeter -n -t EnduranceTestSuite.jmx -l test-results/endurance-test/endurance-test-result.csv -e -o endurance-test-report
+                ./apache-jmeter-5.4.1/bin/jmeter -n -t EnduranceTestSuite.jmx 
                 # run the Stress test suite
-                ./apache-jmeter-5.4.1/bin/jmeter -n -t StressTestSuite.jmx -l test-results/stress-test/stress-test-result.csv -e -o stress-test-report
+                ./apache-jmeter-5.4.1/bin/jmeter -n -t StressTestSuite.jmx
               workingDirectory: $(Pipeline.Workspace)/drop-performancetests
               
   #--------------------------------------------#  
