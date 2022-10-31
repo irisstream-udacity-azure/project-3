@@ -102,22 +102,30 @@ stages:
       displayName: Run Data Validation Tests
       continueOnError: true
       inputs:
-        script: newman run DataValidationSuite.json -e TestEnvironment.json -r junit
+        script: newman run DataValidationSuite.json -e TestEnvironment.json -r junit --reporter-junit-export data-validation-test-results.xml 
         workingDirectory: '$(System.DefaultWorkingDirectory)/automatedtesting/postman'
     # Postman Regression Test Suite    
     - task: CmdLine@2
       displayName: Run Regression Tests
       continueOnError: true
       inputs:
-        script: newman run RegressionTestSuite.json -e TestEnvironment.json -r junit
+        script: newman run RegressionTestSuite.json -e TestEnvironment.json -r junit --reporter-junit-export regression-test-results.xml 
         workingDirectory: '$(System.DefaultWorkingDirectory)/automatedtesting/postman'
     # Postman - Publish Results 
     # ToDo: Complete the task as explained here: https://learn.microsoft.com/en-us/azure/devops/pipelines/tasks/test/publish-test-results?view=azure-devops&tabs=trx%2Cyaml#yaml-snippet
-    - task: PublishTestResults@2
+    - task: PublishDataValidationTestResults@2
       inputs:
         testResultsFormat: 'JUnit'
-        testResultsFiles: 'newman-run-report-*.xml'
-        searchFolder: '$(System.DefaultWorkingDirectory)/automatedtesting/postman/newman'
+        testResultsFiles: 'data-validation-test-results.xml'
+        searchFolder: '$(System.DefaultWorkingDirectory)/automatedtesting/postman'
+        mergeTestResults: true
+        testRunTitle: Postman Test Results
+
+    - task: PublishRegressionTestResults@2
+      inputs:
+        testResultsFormat: 'JUnit'
+        testResultsFiles: 'regression-test-results.xml'
+        searchFolder: '$(System.DefaultWorkingDirectory)/automatedtesting/postman'
         mergeTestResults: true
         testRunTitle: Postman Test Results
 
@@ -210,15 +218,15 @@ stages:
   # ToDo: 
   - deployment: VMDeploy
     displayName: Selenium Tests
-    pool:
-      vmImage: 'Ubuntu-20.04'
-    environment: $(environmentName)
-    # # pool:
-    # #   vmImage: 'Ubuntu-20.04'      
-    # environment:
-    #   name: $(environmentName)
-    #   resourceType: VirtualMachine
-    #   tags: selenium
+    # pool:
+    #   vmImage: 'Ubuntu-20.04'
+    # environment: $(environmentName)
+    # pool:
+    #   vmImage: 'Ubuntu-20.04'      
+    environment:
+      name: $(environmentName)
+      resourceType: VirtualMachine
+      tags: selenium
     strategy:
       runOnce:
         deploy:
