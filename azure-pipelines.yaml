@@ -235,12 +235,12 @@ stages:
                 sudo apt-get install python3-pip -y
                 sudo apt-get install unzip -y
                 python -m pip install --upgrade pip
-                pip3 install -r requirements.txt
                 
                 #  ToDo: Add chromedriver executable to path
                 # export PATH="$PATH:/snap/chromium/current/usr/lib/chromium-browser"
                 
                 # ToDo: Write commands for deploying the UI Test Suite (published zip artifact) to the linux VM and execute the Test Suite
                 unzip  $(Pipeline.Workspace)/drop-uitests/$(Build.BuildId)-uitests.zip
+                pip3 install -r requirements.txt
                 pytest -v > /tmp/uitests.log
               workingDirectory: $(Pipeline.Workspace)/drop-uitests

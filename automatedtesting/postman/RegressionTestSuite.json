@@ -64,15 +64,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/public/api/v1/employees",
+					"raw": "{{url}}/comments",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
-						"public",
-						"api",
-						"v1",
-						"employees"
+						"comments"
 					]
 				}
 			},
