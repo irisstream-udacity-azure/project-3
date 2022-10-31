@@ -1,0 +1,21 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1667186044608,272,GET All Activities,200,OK,Stress Test Suite 1-4,text,true,,351,194,6,6,https://udacity-project-3-appservice.azurewebsites.net/api/Activities?id=4,272,0,205
+1667186044513,415,GET All Activities,200,OK,Stress Test Suite 1-3,text,true,,352,194,7,7,https://udacity-project-3-appservice.azurewebsites.net/api/Activities?id=3,415,0,348
+1667186044327,601,GET All Activities,200,OK,Stress Test Suite 1-1,text,true,,352,194,7,7,https://udacity-project-3-appservice.azurewebsites.net/api/Activities?id=1,601,0,534
+1667186044881,47,GET All Activities,200,OK,Stress Test Suite 1-4,text,true,,352,194,7,7,https://udacity-project-3-appservice.azurewebsites.net/api/Activities?id=7,47,0,0
+1667186044426,502,GET All Activities,200,OK,Stress Test Suite 1-2,text,true,,351,194,7,7,https://udacity-project-3-appservice.azurewebsites.net/api/Activities?id=2,502,0,435
+1667186044929,50,GET All Activities,200,OK,Stress Test Suite 1-1,text,true,,352,195,6,6,https://udacity-project-3-appservice.azurewebsites.net/api/Activities?id=10,49,0,0
+1667186044929,50,GET All Activities,200,OK,Stress Test Suite 1-3,text,true,,352,194,6,6,https://udacity-project-3-appservice.azurewebsites.net/api/Activities?id=9,49,0,0
+1667186044707,290,GET All Activities,200,OK,Stress Test Suite 1-5,text,true,,351,194,4,4,https://udacity-project-3-appservice.azurewebsites.net/api/Activities?id=5,290,0,221
+1667186044931,66,GET All Activities,200,OK,Stress Test Suite 1-2,text,true,,351,194,4,4,https://udacity-project-3-appservice.azurewebsites.net/api/Activities?id=1,66,0,0
+1667186044998,81,GET All Activities,200,OK,Stress Test Suite 1-5,text,true,,351,194,4,4,https://udacity-project-3-appservice.azurewebsites.net/api/Activities?id=2,81,0,0
+1667186044804,275,GET All Activities,200,OK,Stress Test Suite 1-6,text,true,,351,194,4,4,https://udacity-project-3-appservice.azurewebsites.net/api/Activities?id=6,275,0,207
+1667186045079,53,GET All Activities,200,OK,Stress Test Suite 1-6,text,true,,351,194,4,4,https://udacity-project-3-appservice.azurewebsites.net/api/Activities?id=4,53,0,0
+1667186044904,265,GET All Activities,200,OK,Stress Test Suite 1-7,text,true,,351,194,3,3,https://udacity-project-3-appservice.azurewebsites.net/api/Activities?id=8,265,0,175
+1667186045169,61,GET All Activities,200,OK,Stress Test Suite 1-7,text,true,,350,194,4,4,https://udacity-project-3-appservice.azurewebsites.net/api/Activities?id=6,61,0,0
+1667186045004,269,GET All Activities,200,OK,Stress Test Suite 1-8,text,true,,352,194,3,3,https://udacity-project-3-appservice.azurewebsites.net/api/Activities?id=3,269,0,215
+1667186045273,52,GET All Activities,200,OK,Stress Test Suite 1-8,text,true,,351,194,3,3,https://udacity-project-3-appservice.azurewebsites.net/api/Activities?id=8,52,0,0
+1667186045103,278,GET All Activities,200,OK,Stress Test Suite 1-9,text,true,,352,194,2,2,https://udacity-project-3-appservice.azurewebsites.net/api/Activities?id=5,278,0,182
+1667186045381,62,GET All Activities,200,OK,Stress Test Suite 1-9,text,true,,352,194,2,2,https://udacity-project-3-appservice.azurewebsites.net/api/Activities?id=9,62,0,0
+1667186045203,303,GET All Activities,200,OK,Stress Test Suite 1-10,text,true,,352,194,1,1,https://udacity-project-3-appservice.azurewebsites.net/api/Activities?id=7,303,0,231
+1667186045507,67,GET All Activities,200,OK,Stress Test Suite 1-10,text,true,,353,195,1,1,https://udacity-project-3-appservice.azurewebsites.net/api/Activities?id=10,67,0,0

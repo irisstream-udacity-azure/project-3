@@ -1,0 +1,11 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1667185863561,4187,GET All Activities,200,OK,Endurance Test Suite 1-1,text,true,,352,194,2,2,https://udacity-project-3-appservice.azurewebsites.net/api/Activities?id=1,4187,0,537
+1667185863981,3767,GET All Activities,200,OK,Endurance Test Suite 1-2,text,true,,351,194,2,2,https://udacity-project-3-appservice.azurewebsites.net/api/Activities?id=2,3767,0,157
+1667185867753,209,GET All Activities,200,OK,Endurance Test Suite 1-2,text,true,,351,194,2,2,https://udacity-project-3-appservice.azurewebsites.net/api/Activities?id=4,209,0,150
+1667185867753,209,GET All Activities,200,OK,Endurance Test Suite 1-1,text,true,,352,194,2,2,https://udacity-project-3-appservice.azurewebsites.net/api/Activities?id=3,209,0,155
+1667185867963,198,GET All Activities,200,OK,Endurance Test Suite 1-2,text,true,,351,194,2,2,https://udacity-project-3-appservice.azurewebsites.net/api/Activities?id=5,198,0,148
+1667185867963,198,GET All Activities,200,OK,Endurance Test Suite 1-1,text,true,,350,194,2,2,https://udacity-project-3-appservice.azurewebsites.net/api/Activities?id=6,198,0,142
+1667185868162,207,GET All Activities,200,OK,Endurance Test Suite 1-1,text,true,,351,194,2,2,https://udacity-project-3-appservice.azurewebsites.net/api/Activities?id=8,207,0,148
+1667185868162,212,GET All Activities,200,OK,Endurance Test Suite 1-2,text,true,,352,194,2,2,https://udacity-project-3-appservice.azurewebsites.net/api/Activities?id=7,212,0,154
+1667185868370,201,GET All Activities,200,OK,Endurance Test Suite 1-1,text,true,,352,194,2,2,https://udacity-project-3-appservice.azurewebsites.net/api/Activities?id=9,201,0,151
+1667185868375,205,GET All Activities,200,OK,Endurance Test Suite 1-2,text,true,,353,195,1,1,https://udacity-project-3-appservice.azurewebsites.net/api/Activities?id=10,205,0,157

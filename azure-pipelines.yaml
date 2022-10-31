@@ -199,8 +199,10 @@ stages:
                 tar -xzf apache-jmeter-5.4.1.tgz
                 # unzip the jmeter test suite published zip artifact
                 unzip $(Pipeline.Workspace)/drop-performancetests/$(Build.BuildId)-performancetests.zip
-                # run the PerformanceTestSuite
-                ./apache-jmeter-5.4.1/bin/jmeter -n -t PerformanceTestSuite.jmx -l result.csv -e -o report
+                # run the Endurance test suite
+                ./apache-jmeter-5.4.1/bin/jmeter -n -t EnduranceTestSuite.jmx -l test-results/endurance-test/endurance-test-result.csv -e -o endurance-test-report
+                # run the Stress test suite
+                ./apache-jmeter-5.4.1/bin/jmeter -n -t StressTestSuite.jmx -l test-results/stress-test/stress-test-result.csv -e -o stress-test-report
               workingDirectory: $(Pipeline.Workspace)/drop-performancetests
               
   #--------------------------------------------#  
