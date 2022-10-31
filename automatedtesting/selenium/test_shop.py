@@ -1,7 +1,21 @@
-import pytest 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options as ChromeOptions
+
+print ('Starting the browser...')
+# --uncomment when running in Azure DevOps.
+options = ChromeOptions()	
+options.add_argument("--headless") 
+driver = webdriver.Chrome(options=options)
+print ('Browser started successfully. Navigating to the demo page to login.')
+
+def login(username, password):
+	driver.get('https://www.saucedemo.com/')
+	driver.find_element(By.ID, 'user-name').send_keys(username)
+	driver.find_element(By.ID, 'password').send_keys(password)
+	driver.find_element(By.ID, 'login-button').click()
+	if driver.current_url == 'https://www.saucedemo.com/inventory.html':
+		print(f"Lo")
 
 @pytest.fixture()
 def browser():
