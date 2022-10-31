@@ -242,7 +242,9 @@ stages:
                 # export PATH="$PATH:/snap/chromium/current/usr/lib/chromium-browser"
                 
                 # ToDo: Write commands for deploying the UI Test Suite (published zip artifact) to the linux VM and execute the Test Suite
-                unzip  $(Pipeline.Workspace)/drop-uitests/$(Build.BuildId)-uitests.zip
+                unzip -o $(Pipeline.Workspace)/drop-uitests/$(Build.BuildId)-uitests.zip
                 # pip3 install -r requirements.txt
+                eval "$(conda shell.bash hook)"
+                conda activate selenium
                 python uitests.py | tee -a /tmp/uitests.log
               workingDirectory: $(Pipeline.Workspace)/drop-uitests
