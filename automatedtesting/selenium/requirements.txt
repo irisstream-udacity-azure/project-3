@@ -1,0 +1,3 @@
+pytest==7.2.0
+selenium==4.5.0
+chromedriver-py==105.0.5195.52

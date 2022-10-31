@@ -53,7 +53,7 @@
 					"script": {
 						"exec": [
 							"pm.test(\"Successful response\", function () {",
-							"    pm.expect(pm.response.text()).to.include(\"success\");",
+							"    pm.response.to.have.status(200);",
 							"});"
 						],
 						"type": "text/javascript"
