@@ -244,7 +244,6 @@ stages:
                 # ToDo: Write commands for deploying the UI Test Suite (published zip artifact) to the linux VM and execute the Test Suite
                 unzip -o $(Pipeline.Workspace)/drop-uitests/$(Build.BuildId)-uitests.zip
                 # pip3 install -r requirements.txt
-                eval "$(conda shell.bash hook)"
-                conda activate selenium
+                source activate selenium
                 python uitests.py | tee -a /tmp/uitests.log
               workingDirectory: $(Pipeline.Workspace)/drop-uitests
