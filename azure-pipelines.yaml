@@ -42,7 +42,7 @@ stages:
         workingDirectory: '$(System.DefaultWorkingDirectory)/terraform/environments/test'
         backendServiceArm: '$(azureServiceConnectionId)'
         backendAzureRmResourceGroupName: 'Azuredevops'
-        backendAzureRmStorageAccountName: 'tfstate78651576'
+        backendAzureRmStorageAccountName: 'tfstate3201027946'
         backendAzureRmContainerName: 'tfstate'
         backendAzureRmKey: 'test.terraform.tfstate'
 
@@ -225,10 +225,8 @@ stages:
           - download: current
             artifact: drop-uitests
           - bash: |
-              export PATH="$PATH:/home/azureuser/.miniconda3/bin:/tmp/chrome"
               unzip -o $(Pipeline.Workspace)/drop-uitests/$(Build.BuildId)-uitests.zip
-              source activate selenium
-              python uitests.py | tee -a /tmp/uitests.log
+              python3 uitests.py | tee -a /tmp/uitests.log
             displayName: 'Run Selenium Tests' 
             workingDirectory: $(Pipeline.Workspace)/drop-uitests
           # - task: Bash@3
