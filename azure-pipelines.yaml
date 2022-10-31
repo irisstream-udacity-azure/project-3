@@ -113,22 +113,13 @@ stages:
         workingDirectory: '$(System.DefaultWorkingDirectory)/automatedtesting/postman'
     # Postman - Publish Results 
     # ToDo: Complete the task as explained here: https://learn.microsoft.com/en-us/azure/devops/pipelines/tasks/test/publish-test-results?view=azure-devops&tabs=trx%2Cyaml#yaml-snippet
-    - task: PublishDataValidationTestResults@2
+    - task: PublishTestResults@2
       inputs:
         testResultsFormat: 'JUnit'
-        testResultsFiles: 'data-validation-test-results.xml'
-        searchFolder: '$(System.DefaultWorkingDirectory)/automatedtesting/postman'
+        testResultsFiles: 'newman-run-report-*.xml'
+        searchFolder: '$(System.DefaultWorkingDirectory)/automatedtesting/postman/newman'
         mergeTestResults: true
         testRunTitle: Postman Test Results
-
-    - task: PublishRegressionTestResults@2
-      inputs:
-        testResultsFormat: 'JUnit'
-        testResultsFiles: 'regression-test-results.xml'
-        searchFolder: '$(System.DefaultWorkingDirectory)/automatedtesting/postman'
-        mergeTestResults: true
-        testRunTitle: Postman Test Results
-
     #--------------------------------------------#
     # Selenium (UI) Test Suite - Archive the package  
     # "ArchiveFiles@2" picks up the web package and archives it.
