@@ -224,26 +224,31 @@ stages:
           steps:
           - download: current
             artifact: drop-uitests
-            
-          - task: Bash@3
-            inputs:
-              targetType: 'inline'
-              script: |           
-                # ToDo: Install Selenium, Chromium-browser & Chromedriver, if not already in the custom VM image. 
-                #! /bin/bash
+          - bash: |
+              unzip -o $(Pipeline.Workspace)/drop-uitests/$(Build.BuildId)-uitests.zip
+              source activate selenium
+              python uitests.py | tee -a /tmp/uitests.log
+            displayName: 'Run Selenium Tests' 
+            workingDirectory: $(Pipeline.Workspace)/drop-uitests
+          # - task: Bash@3
+          #   inputs:
+          #     targetType: 'inline'
+          #     script: |           
+          #       # ToDo: Install Selenium, Chromium-browser & Chromedriver, if not already in the custom VM image. 
+          #       #! /bin/bash
                 
-                # sudo apt-get upgrade -y
-                # sudo apt-get install python3-pip -y
-                # sudo apt-get install unzip -y
-                # sudo apt-get install tee -y
-                # python -m pip install --upgrade pip
+          #       # sudo apt-get upgrade -y
+          #       # sudo apt-get install python3-pip -y
+          #       # sudo apt-get install unzip -y
+          #       # sudo apt-get install tee -y
+          #       # python -m pip install --upgrade pip
                 
-                #  ToDo: Add chromedriver executable to path
-                # export PATH="$PATH:/snap/chromium/current/usr/lib/chromium-browser"
+          #       #  ToDo: Add chromedriver executable to path
+          #       # export PATH="$PATH:/snap/chromium/current/usr/lib/chromium-browser"
                 
-                # ToDo: Write commands for deploying the UI Test Suite (published zip artifact) to the linux VM and execute the Test Suite
-                unzip -o $(Pipeline.Workspace)/drop-uitests/$(Build.BuildId)-uitests.zip
-                # pip3 install -r requirements.txt
-                source activate selenium
-                python uitests.py | tee -a /tmp/uitests.log
-              workingDirectory: $(Pipeline.Workspace)/drop-uitests
+          #       # ToDo: Write commands for deploying the UI Test Suite (published zip artifact) to the linux VM and execute the Test Suite
+          #       unzip -o $(Pipeline.Workspace)/drop-uitests/$(Build.BuildId)-uitests.zip
+          #       # pip3 install -r requirements.txt
+          #       source activate selenium
+          #       python uitests.py | tee -a /tmp/uitests.log
+          #     workingDirectory: $(Pipeline.Workspace)/drop-uitests
