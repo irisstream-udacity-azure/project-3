@@ -1,10 +1,36 @@
-# Project Starter
-This repository contains the starter code for the **Ensuring Quality Releases** project of the cd1807 Ensuring Quality Releases (Quality Assurance) course taught by Nathan Anderson. 
+# Project 3
 
+## Run IaC with Terraform
+![terraform apply](./imgs/tf_apply.png)
 
-## How to use?
-- Fork this repository to your Github account and clone it locally for further development. 
-- Follow the classroom instructions, and check the rubric before a submission. 
+## Successful execution of the pipeline build results page
+![pipeline](./imgs/azure_pipeline.png)
 
-## Suggestions and Corrections
-Feel free to submit PRs to this repo should you have any proposed changes. 
+## Performance test
+### HTLM Report
+- [Endurance Test Suite](./automatedtesting/jmeter/test-suite/test-results/endurance-test.zip)
+
+- [Stress Test Suite](./automatedtesting/jmeter/test-suite/test-results/stress-test.zip)
+
+### Jmeter output
+![jemter output](./imgs/jmeter.png) 
+## Integration Test
+### Run Summary page 
+![test sumary](./imgs/test-sumary-postman.png)
+### Test results page
+![test result](./imgs/test-result-page-postman.png)
+
+## Alert
+### Email
+![Alert email](./imgs/alert.png)
+
+### Resources metric
+![resources metric](./imgs/alert-rules.png)
+
+## Log analytic
+### Log query
+![log analytic](./imgs/selenium_log.png)
+
+### Selenium execution output
+![selenium output](./imgs/UITest-selenium.png)
+
